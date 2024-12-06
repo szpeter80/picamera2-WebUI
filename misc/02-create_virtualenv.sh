@@ -14,3 +14,11 @@ then
 fi;
 
 python -m venv "../${VENVDIR}" --system-site-packages
+
+# shellcheck disable=SC1090
+. "../${VENVDIR}/bin/activate"
+
+pip install --upgrade pip
+pip install -r ../requirements.txt
+
+deactivate
